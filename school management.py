@@ -37,8 +37,8 @@ def selection():
                                              print('Enter correct choice...!!')
                elif ch==2:
                               print('WELCOME TO EMPLOYEE MANAGEMENT SYSTEM')
-                              print('a.NEW EMPLOYEE')
-                              print('b.DELETE EMPLOYEE')
+                              print('a.ADD NEW EMPLOYEE')
+                              print('b.DELETE EXISTING EMPLOYEE')
                               c=input("Enter ur choice : ")
                               if c=='a':
                                              insert2()
@@ -210,7 +210,7 @@ def delete2():
                temp=int(input("\nEnter emp no to be deleted : "))
                try:
                               sql = "delete from emp where empno='%d'" % (temp)
-                              ans=input("Are you sure you want to delete the record(y/n) : ")
+                              ans=input("Are you sure you want to delete this record(y/n) : ")
                               if ans=='y' or ans=='Y':
                                              cursor.execute(sql)
                                              db.commit()
@@ -239,7 +239,7 @@ def display3():
                                              print(c)
                               print ("(admno=%d,fee=%s,month=%s)" % (admno,fee,month))
                except:
-                              print ("Error: unable to fetch data")
+                              print ("Error: unable to fetch data !!")
                               db.close()
 
 def update3():
@@ -250,7 +250,7 @@ def update3():
                               for c in results:
                                              print(c)
                except:
-                              print ("Error: unable to fetch data")
+                              print ("Error: unable to fetch data !!")
                               print()
                tempst=int(input("Enter Admission No : "))
                temp=input("Enter Month : ")
@@ -267,7 +267,7 @@ def delete3():
                               for c in results:
                                              print(c)
                except:
-                              print ("Error: unable to fetch data")
+                              print ("Error: unable to fetch data !!")
 
                temp=int(input("\nEnter adm no to be deleted : "))
                try:
@@ -302,7 +302,7 @@ def display4():
                                              print(c)
                               print ("(sname,admno,per,res)"%(sname,admno,per,res) )
                except:
-                              print ("Error: unable to fetch data")
+                              print ("Error: unable to fetch data !!")
                               db.close()
 
 def update4():
@@ -313,7 +313,7 @@ def update4():
                               for c in results:
                                              print(c)                  
                except:
-                              print ("Error: unable to fetch data")
+                              print ("Error: unable to fetch data !!")
                               print()
                tempst=int(input("Enter Admission No : "))
                temp=input("Enter new result  : ")
@@ -334,7 +334,7 @@ def delete4():
                                               print(c)
 
                except:
-                              print ("Error: unable to fetch data")
+                              print ("Error: unable to fetch data !!")
                temp=int(input("\nEnter adm no to be deleted : "))
                try:
                               sql = "delete from exam where admno='%d'" % (temp)
